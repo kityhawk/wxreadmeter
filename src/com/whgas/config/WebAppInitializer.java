@@ -5,10 +5,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
 	@Override
-	protected Class<?>[] getServletConfigClasses() {				//Spring mvc容器
-		return new Class<?>[]	{WebConfig.class};
+	protected String[] getServletMappings() {					//DispatcherServlet映射,从"/"开始
+		return new String[] { "/" };
 	}
-	
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {					//根容器
@@ -16,8 +15,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	}
 
 	@Override
-	protected String[] getServletMappings() {					//DispatcherServlet映射,从"/"开始
-		return new String[] {"/"};
+	protected Class<?>[] getServletConfigClasses() {				//Spring mvc容器
+		return new Class<?>[]	{WebConfig.class};
 	}
-
 }

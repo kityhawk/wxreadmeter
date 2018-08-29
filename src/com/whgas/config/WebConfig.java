@@ -29,15 +29,17 @@ public class WebConfig extends WebMvcConfigurationSupport
 		return resolver;		
 	}
     
+	/*
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-    
+    */
+	
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //registry.addResourceHandler("/resources/").addResourceLocations("/resources/**");
         //registry.addResourceHandler("/sui2.html").addResourceLocations("/").setCachePeriod(3600 * 24 * 15);
-        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+        //registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
     }
 }

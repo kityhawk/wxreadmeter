@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.whgas.config.MultipleDataSource;
 import com.whgas.dao.DepartmentDao;
-import com.whgas.model.Departments;
+import com.whgas.model.Department;
 
 
 @Service
@@ -16,10 +16,10 @@ public class DepartmentService {
 	@Autowired
 	private DepartmentDao departmentDao;
 	
-	public List<Departments> getDeptByLocationId( int locationId)
+	public List<Department> getDeptByLocationId( int locationId)
 	{
 		MultipleDataSource.setDataSourceKey("remoteDataSource");
-		List<Departments> deptlist = departmentDao.getDeptByLocationId(locationId);
+		List<Department> deptlist = departmentDao.getDeptByLocationId(locationId);
 		return deptlist;
 	}
 }

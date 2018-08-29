@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.whgas.model.Departments;
+import com.whgas.model.Department;
 import com.whgas.service.DepartmentService;
 import com.whgas.service.EmployeeService;
 
@@ -35,7 +35,7 @@ public class EmployeeController {
     @ResponseBody
     public String getDeptList(HttpServletRequest request)
     {
-    	List<Departments> deptlist = departmentService.getDeptByLocationId(1700);
+    	List<Department> deptlist = departmentService.getDeptByLocationId(1700);
     	return deptlist.get(0).getDepartment_name();
     }
     

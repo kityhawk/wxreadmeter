@@ -1,6 +1,6 @@
 package com.whgas.model;
 
-public class Departments {
+public class Department {
 	private int department_id;				//DEPARTMENT_ID
 	private String department_name;		//DEPARTMENT_NAME
 	private int manager_id;						//MANAGER_ID

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.whgas.config.MultipleDataSource;
 import com.whgas.dao.DepartmentDao;
 import com.whgas.dao.EmployeeDao;
-import com.whgas.model.Departments;
+import com.whgas.model.Department;
 import com.whgas.model.Employee;
 
 @Service
@@ -28,7 +28,7 @@ public class EmployeeService {
 		returnString = emp.getFirst_name()+"-"+emp.getLast_name();
 		
 		MultipleDataSource.setDataSourceKey("remoteDataSource");
-		List<Departments> deptlist = departmentDao.getDeptByLocationId(1700);
+		List<Department> deptlist = departmentDao.getDeptByLocationId(1700);
 		returnString = returnString+"|"+deptlist.get(0).getDepartment_name();
 		
 		MultipleDataSource.setDataSourceKey("localDataSource");
